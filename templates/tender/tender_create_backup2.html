@@ -4,16 +4,16 @@
 
 {% load static %}
 <link rel="stylesheet" href="{% static 'tender/style.css' %}">
+<script src="{% static 'tender/main.js' %}"></script>
 
 <!-- {% block title %}New Tender{% endblock title %} -->
 
 <h1>New Tender</h1>
 <form action="/new-tender/" method="post">
     {% csrf_token %}
-    <div class="sortable-list">
-        <div class="item" draggable="true">
-            <!-- Element -->
-            <!-- <span class="order">1</span> -->
+    <div class="tender-container">
+        <div class="list-item section-container"> <!-- Element -->
+            <span class="order">1</span>
             <div class="item-content wrapper-container">
                 <h2>Proposal Details</h2>
                 <div class="content-container">
@@ -37,9 +37,8 @@
                 </div>
             </div>
         </div>
-        <div class="item" draggable="true">
-            <!-- Element -->
-            <!-- <span class="order">2</span> -->
+        <div class="list-item section-container"> <!-- Element -->
+            <span class="order">2</span>
             <div class="item-content wrapper-container">
                 <h2>Contractor Details</h2>
                 <div class="content-container">
@@ -66,9 +65,8 @@
                 </div>
             </div>
         </div>
-        <div class="item" draggable="true">
-            <!-- Element -->
-            <!-- <span class="order">3</span> -->
+        <div class="list-item section-container"> <!-- Element -->
+            <span class="order">3</span>
             <div class="item-content wrapper-container">
                 <h2>Client Details</h2>
                 <div class="content-container">
@@ -95,9 +93,8 @@
                 </div>
             </div>
         </div>
-        <div class="item" draggable="true">
-            <!-- Element -->
-            <!-- <span class="order">4</span> -->
+        <div class="list-item section-container"> <!-- Element -->
+            <span class="order">4</span>
             <div class="item-content wrapper-container">
                 <h2>Financial Details</h2>
                 <div class="content-container">
@@ -114,9 +111,8 @@
                 </div>
             </div>
         </div>
-        <div class="item" draggable="true">
-            <!-- Element -->
-            <!-- <span class="order">5</span> -->
+        <div class="list-item section-container"> <!-- Element -->
+            <span class="order">5</span>
             <div class="item-content wrapper-container">
                 <h2>Planning Details</h2>
                 <div class="content-container">
@@ -168,9 +164,8 @@
                 </div>
             </div>
         </div>
-        <div class="item" draggable="true">
-            <!-- Element -->
-            <!-- <span class="order">6</span> -->
+        <div class="list-item section-container"> <!-- Element -->
+            <span class="order">6</span>
             <div class="item-content wrapper-container">
                 <h2>Terms & Conditions</h2>
                 <div class="content-container">
@@ -182,12 +177,7 @@
                 </div>
             </div>
         </div>
-        <div class="button-container">
-            <button class="submit-button" type="submit">Create</button>
-        </div>
     </div>
+    <button type="submit">Create</button>
 </form>
-
-<script src="{% static 'tender/main.js' %}"></script>
-
 {% endblock content %}
