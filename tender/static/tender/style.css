@@ -17,12 +17,18 @@ body {
 }
 
 .sortable-list {
-    width: 100%;
+    width: 150vh;
     padding: 25px;
     background: #fff;
     border-radius: 7px;
     padding: 30px 25px 20px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.item {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .sortable-list .item {
@@ -38,6 +44,7 @@ body {
     border: 1px solid #ccc;
     justify-content: space-between;
 }
+
 
 .item .details {
     display: flex;
@@ -70,3 +77,6 @@ body {
     opacity: 0;
 }
 
+.container {
+    flex-direction: column;
+}
