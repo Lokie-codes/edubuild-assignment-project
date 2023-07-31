@@ -1,0 +1,11 @@
+{% extends "_base.html" %}
+
+{% block title %}Tenders List{% endblock title %}
+
+{% block content %}
+    {% for tender in tender_list %}
+    <div>
+        <h2><a href="{{ tender.get_absolute_url }}">{{ tender.title }}</a></h2>
+    </div>
+    {% endfor %}
+{% endblock content %}
