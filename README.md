@@ -69,6 +69,17 @@ python manage.py runserver
 8. Access the development server at http://localhost:8000/ register as a new user and log in to the application. 
 
 9. Adminpanel can be accesed with the superuser credentials at http://localhost:8000/admin/ 
+
+10. For convience, I've popluated the database with some dummy data. Login crentials are as follows:
+
+*Admin Credentials* : \
+**Username** : admin \
+**Password** : superpassword
+
+*User Login Credentials* : \
+**Username** : user1 \
+**Password** : superpassword 
+
 ## Usage
 
 - To view the list of all tenders, go to the homepage at `/`.

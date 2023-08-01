@@ -6,6 +6,9 @@
 <link rel="stylesheet" href="{% static 'tender/style.css' %}">
 
 <!-- {% block title %}New Tender{% endblock title %} -->
+<!--  -->
+{% if user.is_authenticated %}
+<!--  -->
 
 <h1>New Tender</h1>
 <form action="/new-tender/" method="post">
@@ -187,6 +190,17 @@
         </div>
     </div>
 </form>
+
+<!--  -->
+{% else %}
+
+<div class="login-cabin">
+    <h1>You are not Logged in</h1>
+    <a href="{% url 'login' %}">Log In</a>
+    <a href="{% url 'signup' %}">Sign up</a>
+</div>
+{% endif %}
+<!--  -->
 
 <script src="{% static 'tender/main.js' %}"></script>
 

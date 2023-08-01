@@ -6,9 +6,9 @@
 
 {% load static %}
 <link rel="stylesheet" href="{% static 'tender/style.css' %}">
-
+<!--  -->
 <div class="tender-detail sortable-list">
-    <div class="proposal-container item container">
+    <div class="proposal-container item container" draggable="true">
         <h1>Proposal Title - {{ tender.title }}</h1>
         <p><b>Description</b> - {{ tender.proposal_description }}</p>
         <p><b>Proposal Date</b> - {{ tender.proposal_date|date:"jS F, Y" }}</p>
@@ -67,6 +67,7 @@
     </div>
     <button type="button"><a href="{% url 'tender_pdf' tender.id %}">Preview</a></button>
 </div>
+<!--  -->
 
 <script src="{% static 'tender/main.js' %}"></script>
 
