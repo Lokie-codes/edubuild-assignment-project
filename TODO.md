@@ -27,7 +27,7 @@
 - additional custom sections
 
 **[✔]** Tender views creation. \
-**[ ]** drag-and-drop functionality for reordering the sections \
+**[✔]** drag-and-drop functionality for reordering the sections \
 **[ ]** Preview feature
 -  generates a PDF version of the custom tender
 proposal

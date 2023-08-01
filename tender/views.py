@@ -6,11 +6,13 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+from django.urls import reverse_lazy
 
 from .models import Tender
 from .forms import TenderForm
 
 # Create your views here.
+
 
 class TenderListView(ListView):
     model = Tender
@@ -31,4 +33,14 @@ class TenderCreateView(CreateView):
 
 
 class TenderUpdateView(UpdateView):
-    pass
+    model = Tender
+    fields = "__all__"
+    context_object_name = "tender"
+    template_name = "tender/tender_update.html"
+
+
+class TenderDeleteView(DeleteView):
+    model = Tender
+    context_object_name = "tender"
+    template_name = "tender/tender_delete.html"
+    success_url = reverse_lazy("tender_list")

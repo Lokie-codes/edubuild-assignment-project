@@ -3,9 +3,21 @@
 {% block title %}Tenders List{% endblock title %}
 
 {% block content %}
-    {% for tender in tender_list %}
-    <div>
-        <h2><a href="{{ tender.get_absolute_url }}">{{ tender.title }}</a></h2>
-    </div>
-    {% endfor %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'tender/style.css' %}">
+
+{% for tender in tender_list %}
+<div>
+    <h2><a href="{{ tender.get_absolute_url }}">{{ tender.title }}</a>
+        <ul>
+            <button type="button"><a href="{{ tender.get_absolute_url }}">View</a></button>
+        <button type="button"><a href="{% url 'tender_update' tender.id %}">Update</a></button>
+        <button type="button"><a href="{% url 'tender_delete' tender.id %}">Delete</a></button>
+        </ul>
+    </h2>
+
+</div>
+{% endfor %}
+<h1> <li class="nav-item"><a href="{% url 'tender_create' %}">Create New Tender</a></li>
+</h1>
 {% endblock content %}
