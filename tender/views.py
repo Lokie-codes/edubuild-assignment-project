@@ -11,8 +11,10 @@ from django.urls import reverse_lazy
 from .models import Tender
 from .forms import TenderForm
 
-# Create your views here.
+from django.http import Http404
+from main import renders
 
+# Create your views here.
 
 class TenderListView(ListView):
     model = Tender
@@ -44,3 +46,21 @@ class TenderDeleteView(DeleteView):
     context_object_name = "tender"
     template_name = "tender/tender_delete.html"
     success_url = reverse_lazy("tender_list")
+
+class TenderPDFView(DetailView):
+    model = Tender
+    context_object_name = "tender"
+    template_name = "tender/tender_detail.html"
+
+    def get(self, request, *args, **kwargs):
+        tender = Tender.objects.get(pk=self.kwargs.get("pk"))
+        tender_pdf = renders.render_to_pdf("tender/tender_detail.html", {"tender": tender})
+        if tender_pdf.status_code == 404:
+            raise Http404("Tender not found")
+        filename = f"tender{self.kwargs.get('pk')}.pdf"
+        content = f"inline; filename={filename}"
+        download = request.GET.get("download")
+        if download:
+            content = f"attachment; filename={filename}"
+        tender_pdf["Content-Disposition"] = content
+        return tender_pdf

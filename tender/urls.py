@@ -5,6 +5,7 @@ from .views import (
     TenderCreateView,
     TenderUpdateView,
     TenderDeleteView,
+    TenderPDFView,
 )
 
 urlpatterns = [
@@ -13,4 +14,5 @@ urlpatterns = [
     path("new-tender/", TenderCreateView.as_view(), name="tender_create"),
     path("update-tender/<uuid:pk>/", TenderUpdateView.as_view(), name="tender_update"),
     path("delete-tender/<uuid:pk>/", TenderDeleteView.as_view(), name="tender_delete"),
+    path("pdf/<uuid:pk>/", TenderPDFView.as_view(), name="tender_pdf"),
 ]

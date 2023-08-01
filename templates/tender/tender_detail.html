@@ -65,6 +65,7 @@
             {{ tender.terms_and_conditions|linebreaks }}
         </p>
     </div>
+    <button type="button"><a href="{% url 'tender_pdf' tender.id %}">Preview</a></button>
 </div>
 
 <script src="{% static 'tender/main.js' %}"></script>
