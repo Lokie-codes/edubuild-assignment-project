@@ -46,6 +46,9 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = "users.CustomUser"
 
+LOGIN_REDIRECT_URL = "tender_list"
+LOGOUT_REDIRECT_URL = "tender_list"
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",

@@ -28,9 +28,10 @@
 
 **[✔]** Tender views creation. \
 **[✔]** drag-and-drop functionality for reordering the sections \
-**[ ]** Preview feature
+**[✔]** Preview feature
 -  generates a PDF version of the custom tender
 proposal
 
-**[ ]** User authentication and authorization \
-**[ ]** Documentation 
+**[✔]** User authentication and authorization \
+**[ ]** Documentation \
+**[ ]** Finetuning and Finishing touch 

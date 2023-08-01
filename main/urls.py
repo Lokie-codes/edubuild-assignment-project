@@ -18,6 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('tender.urls')),
+    path("admin/", admin.site.urls),
+    # default authentication
+    path("accounts/", include("django.contrib.auth.urls")),
+    # local app for register functionality
+    path("accounts/", include("users.urls")),
+    path("", include("tender.urls")),
 ]
